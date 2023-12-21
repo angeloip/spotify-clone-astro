@@ -11,7 +11,7 @@ const artistsString = artists.join(', ')
 ---
 
 <article
-  class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 transition-all duration-300"
+  class="group relative hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 transition-all duration-300 rounded-md"
 >
   <div
     class="absolute right-4 bottom-20 translate-y-4
@@ -23,7 +23,7 @@ const artistsString = artists.join(', ')
   </div>
   <a
     href={`/playlist/${id}`}
-    class="playlist-item transition-all duration-300 flex flex-col relative p-2 overflow-hidden gap-2 pb-6 rounded-md w-44"
+    class="playlist-item transition-all duration-300 flex flex-col relative p-2 overflow-hidden gap-2 pb-6 w-44"
     transition:name=`playlist ${id} box`
   >
     <picture class="aspect-square w-full h-auto flex-none">
