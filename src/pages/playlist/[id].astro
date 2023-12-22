@@ -3,6 +3,7 @@ import { allPlaylists, songs } from '@/lib/data'
 import Layout from '../../layouts/Layout.astro'
 import PlayListItemCard from '@/components/PlayListItemCard.astro'
 import MusicsTable from '@/components/MusicsTable.astro'
+import { CardPlayButton } from '@/components/CardPlayButton'
 
 const { id } = Astro.params
 
@@ -41,12 +42,18 @@ const playlistSongs = songs.filter((song) => song.albumId === playlist?.albumId)
               <span>{playlist?.artists.join(', ')}</span>
             </div>
             <p class="mt-1">
-              <span class="text-white"> 5 canciones</span>, 3h aprox.
+              <span class="text-white">{playlistSongs.length} canciones</span>,
+              3h aprox.
             </p>
           </div>
         </div>
       </div>
     </header>
+
+    <div class="pl-6 pt-6">
+      <CardPlayButton client:load id={id} size="large" />
+    </div>
+
     <div class="relative z-10 px-6 pt-10"></div>
 
     <div
